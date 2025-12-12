@@ -36,7 +36,11 @@ const Welcome = () => {
             initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}    
-              className='inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-200 mt-10'>Get Started <ArrowRight /></motion.button>
+              className='inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-200 mt-10'
+          >
+              Get Started
+              <ArrowRight />
+          </motion.button>
     </div>
   )
 }
