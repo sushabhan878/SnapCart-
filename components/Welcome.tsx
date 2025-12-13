@@ -3,7 +3,11 @@ import React from 'react'
 import { motion } from "motion/react"
 import { ArrowRight, Bike, ShoppingBasket } from 'lucide-react'
 
-const Welcome = () => {
+type propType = {
+    nextStep:(step: number) => void
+}
+
+const Welcome = ({nextStep}:propType) => {
   return (
     <div className='flex flex-col items-center justify-center min-h-screen text-center p-6'>
           <motion.div
@@ -37,6 +41,7 @@ const Welcome = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}    
               className='inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-200 mt-10'
+              onClick={() => nextStep(2)}
           >
               Get Started
               <ArrowRight />

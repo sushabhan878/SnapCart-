@@ -1,10 +1,14 @@
+"use client"
+import RegisterForm from '@/components/RegisterForm'
 import Welcome from '@/components/Welcome'
-import React from 'react'
+import { Home } from 'lucide-react'
+import React, { useState } from 'react'
 
 const Register = () => {
-  return (
+    const [step, setStep] = useState(1)
+    return (
       <>
-        <Welcome/>
+          {step === 1 ? <Welcome nextStep={setStep} /> : <RegisterForm previousStep={setStep}/>}
       </>
   )
 }
