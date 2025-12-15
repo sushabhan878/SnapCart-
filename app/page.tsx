@@ -3,6 +3,7 @@ import EditRoleMobile from '@/components/EditRoleMobile'
 import connectDb from '@/lib/db'
 import User from '@/models/user.model'
 import { redirect } from 'next/navigation'
+import { use } from 'react'
 
 const page = async() => {
       await connectDb()
