@@ -1,9 +1,9 @@
 import { auth } from '@/auth'
 import EditRoleMobile from '@/components/EditRoleMobile'
+import NavBar from '@/components/Nav'
 import connectDb from '@/lib/db'
 import User from '@/models/user.model'
 import { redirect } from 'next/navigation'
-import { use } from 'react'
 
 const page = async() => {
       await connectDb()
@@ -13,14 +13,15 @@ const page = async() => {
         redirect("/login")
     }
 
-    const inCompleteProfile = !user.mobile || !user.role || (!user.mobile && user.role == "user")
+    const inCompleteProfile = !user.mobile || !user.role
     if (inCompleteProfile) {
        return <EditRoleMobile/> 
     }
+  const planeUser = JSON.parse(JSON.stringify(user))
   return (
-    <div>
-      Hello
-    </div>
+    <>
+      <NavBar user={ planeUser } />
+    </>
   )
 }
 
